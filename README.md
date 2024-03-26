@@ -29,4 +29,5 @@
 > 특정 userId로 특강 신청 완료 여부를 조회 <br>
 > (return true / false)
 
-![스크린샷 2024-03-26 오후 8 27 32](https://github.com/thdus3009/Lecture-Registrations/assets/63095234/49a58b78-641d-43cc-84cd-6104175d562f)
+
+![스크린샷 2024-03-27 오전 6 48 49](https://github.com/thdus3009/Lecture-Registrations/assets/63095234/9fabf8d0-e950-4e4f-98f2-18675589a3da)
