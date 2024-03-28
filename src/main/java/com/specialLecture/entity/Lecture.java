@@ -1,10 +1,7 @@
 package com.specialLecture.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,7 +9,7 @@ import java.time.ZonedDateTime;
 
 @Getter
 @Entity
-@Table(schema = "lecture_enrollment", name = "lecture")
+@Table(name = "Lecture")
 public class Lecture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,5 +37,7 @@ public class Lecture {
     public void decreaseCapacity(){
         this.capacity = this.capacity-1;
     }
-
+    public void increaseCapacity(){
+        this.capacity = this.capacity+1;
+    }
 }

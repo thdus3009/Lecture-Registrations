@@ -9,7 +9,7 @@ import java.time.ZonedDateTime;
 
 @Getter
 @Entity
-@Table(schema = "lecture_enrollment", name = "user_lecture")
+@Table(name = "UserLecture")
 public class UserLecture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -16,14 +16,14 @@ public class LectureService {
 
     @Transactional(rollbackFor = Exception.class)
     public UserLectureResponseDto register (Long userId, Long lectureId) {
-        //return lockHandler.executeOnLock(userId+":"+lectureId,){
+        String key = userId + ":" + lectureId;
+        return lockHandler.executeOnLock(key, () -> {
             // 접수 시간 및 남은 인원수 확인 + 정원 차감
             lectureManager.check(lectureId);
             // 강의 등록
             UserLecture userLecture = lectureManager.register(userId, lectureId);
-
             return new UserLectureResponseDto(userLecture);
-        //}
+        });
     }
     @Transactional(rollbackFor = Exception.class)
     public Boolean getRegisterStatus (Long userId, Long lectureId) {
