@@ -1,12 +1,18 @@
 package com.specialLecture.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.ZonedDateTime;
 
 @Getter
-@NoArgsConstructor
 @Entity
+@Table(schema = "lecture_enrollment", name = "lecture")
 public class Lecture {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +25,20 @@ public class Lecture {
     @Column(name = "capacity", nullable = false)
     Long capacity;
 
-    @Column(name = "update_time", nullable = false)
-    Long updateTime;
+    @Column(name = "open_time", nullable = false)
+    ZonedDateTime openTime;
 
-    @OneToOne(mappedBy = "lecture")
-    private Lecture lecture;
+    @CreationTimestamp
+    @Column(name = "created_at", nullable = false, insertable = true, updatable = false)
+    ZonedDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at", nullable = true, insertable = true, updatable = true)
+    ZonedDateTime updatedAt = null;
+
+    // capacity 수정
+    public void decreaseCapacity(){
+        this.capacity = this.capacity-1;
+    }
 
 }

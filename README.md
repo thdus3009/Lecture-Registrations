@@ -24,7 +24,7 @@
 > 선착순 30명, 이미 신청자가 30명이 초과하면 이후 신청자는 요청 실패
 > 
 
-### 특강 신청 완료 여부 조회 api ( GET /lectures/{user_id}/registrations )
+### 특강 신청 완료 여부 조회 api ( GET /lectures/{user_id}/registrations/{lecture_id} )
 
 > 특정 userId로 특강 신청 완료 여부를 조회 <br>
 > (return true / false)
