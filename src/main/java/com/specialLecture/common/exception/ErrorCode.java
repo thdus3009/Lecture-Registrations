@@ -1,4 +1,4 @@
-package com.specialLecture.exception;
+package com.specialLecture.common.exception;
 
 import org.springframework.stereotype.Component;
 

@@ -1,9 +1,5 @@
 package com.specialLecture;
 
-import com.specialLecture.dto.UserLectureResponseDto;
-import com.specialLecture.lecture.LectureService;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest

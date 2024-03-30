@@ -1,10 +1,9 @@
-package com.specialLecture.lecture;
+package com.specialLecture.service;
 
 import com.specialLecture.dto.UserLectureResponseDto;
-import com.specialLecture.entity.Lecture;
 import com.specialLecture.entity.UserLecture;
+import com.specialLecture.common.handler.LockHandler;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

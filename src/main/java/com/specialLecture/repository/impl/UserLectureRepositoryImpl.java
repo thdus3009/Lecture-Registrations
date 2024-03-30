@@ -1,8 +1,8 @@
-package com.specialLecture.lecture.repository.impl;
+package com.specialLecture.repository.impl;
 
 import com.specialLecture.entity.UserLecture;
-import com.specialLecture.lecture.repository.UserLectureJpaRepository;
-import com.specialLecture.lecture.repository.UserLectureRepository;
+import com.specialLecture.repository.UserLectureJpaRepository;
+import com.specialLecture.repository.UserLectureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

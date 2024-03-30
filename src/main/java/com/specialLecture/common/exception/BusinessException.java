@@ -1,4 +1,4 @@
-package com.specialLecture.exception;
+package com.specialLecture.common.exception;
 
 public class BusinessException extends RuntimeException{
     public BusinessException(String message){

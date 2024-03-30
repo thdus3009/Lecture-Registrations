@@ -1,6 +1,7 @@
-package com.specialLecture.lecture;
+package com.specialLecture.controller;
 
 import com.specialLecture.dto.UserLectureResponseDto;
+import com.specialLecture.service.LectureService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,11 +1,11 @@
-package com.specialLecture.lecture;
+package com.specialLecture.service;
 
 import com.specialLecture.entity.Lecture;
 import com.specialLecture.entity.UserLecture;
-import com.specialLecture.exception.BusinessException;
-import com.specialLecture.exception.ErrorCode;
-import com.specialLecture.lecture.repository.LectureRepository;
-import com.specialLecture.lecture.repository.UserLectureRepository;
+import com.specialLecture.common.exception.BusinessException;
+import com.specialLecture.common.exception.ErrorCode;
+import com.specialLecture.repository.LectureRepository;
+import com.specialLecture.repository.UserLectureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;

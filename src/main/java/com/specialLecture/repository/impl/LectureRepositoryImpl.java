@@ -1,9 +1,8 @@
-package com.specialLecture.lecture.repository.impl;
+package com.specialLecture.repository.impl;
 
 import com.specialLecture.entity.Lecture;
-import com.specialLecture.lecture.repository.LectureJpaRepository;
-import com.specialLecture.lecture.repository.LectureRepository;
-import jakarta.persistence.EntityNotFoundException;
+import com.specialLecture.repository.LectureJpaRepository;
+import com.specialLecture.repository.LectureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

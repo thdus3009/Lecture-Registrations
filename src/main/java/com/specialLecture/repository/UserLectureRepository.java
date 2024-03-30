@@ -1,4 +1,4 @@
-package com.specialLecture.lecture.repository;
+package com.specialLecture.repository;
 
 import com.specialLecture.entity.UserLecture;
 import org.springframework.stereotype.Repository;

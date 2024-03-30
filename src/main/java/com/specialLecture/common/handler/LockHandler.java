@@ -1,4 +1,4 @@
-package com.specialLecture.lecture;
+package com.specialLecture.common.handler;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
