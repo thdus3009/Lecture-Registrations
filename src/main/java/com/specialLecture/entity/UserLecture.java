@@ -30,6 +30,9 @@ public class UserLecture {
     @Column(name = "updated_at", nullable = true, insertable = true, updatable = true)
     ZonedDateTime updatedAt = null;
 
+    public UserLecture(){
+
+    }
     public UserLecture(Long userId, Long lectureId) {
         this.userId = userId;
         this.lectureId = lectureId;

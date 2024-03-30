@@ -1,5 +1,6 @@
 package com.specialLecture;
 
+import com.specialLecture.dto.UserLectureResponseDto;
 import com.specialLecture.entity.Lecture;
 import com.specialLecture.lecture.LectureService;
 import com.specialLecture.lecture.repository.LectureJpaRepository;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.ZonedDateTime;
 import java.util.Optional;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -56,8 +58,21 @@ public class ConcurrencyTest {
 
     @Test
     public void 테스트(){
+//         Lecture lecture1 = new Lecture("코딩 특강 수업", 30L, 30L, ZonedDateTime.now());
+//         lectureJpaRepository.save(lecture1);
         Optional<Lecture> lecture = lectureJpaRepository.findById(1L);
-        System.out.println(lecture);
+        System.out.println(lecture.get());
         Assertions.assertThat(lecture);
+    }
+    @Test
+    public void 등록_테스트(){
+        for (int i=1; i<4; i++){
+            Long lectureId = 1L;
+            Long userId = Long.valueOf(i);;
+            UserLectureResponseDto dto = lectureService.register(userId, lectureId);
+
+            System.out.println(dto);
+            Assertions.assertThat(dto);
+        }
     }
 }

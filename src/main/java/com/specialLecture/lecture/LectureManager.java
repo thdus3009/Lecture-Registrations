@@ -70,7 +70,7 @@ public class LectureManager{
         if(startTime.isAfter(nowTime)) throw new BusinessException(ErrorCode.NOT_START_TIME);
 
         // 자리가 남아 있는지 확인
-        if(lecture.get().getCapacity()==0) throw new BusinessException(ErrorCode.NOT_ENOUGH_CAPACITY);
+        if(lecture.get().getRemainCapacity()==0) throw new BusinessException(ErrorCode.NOT_ENOUGH_CAPACITY);
 
         // 강의 정원 수 차감
         lecture.get().decreaseCapacity();
@@ -80,7 +80,7 @@ public class LectureManager{
     public UserLecture register(Long userId, Long lectureId){
         Optional<UserLecture> userLecture = userLectureReader.read(userId, lectureId);
         // 등록 유무 체크
-        if(userLecture!=null) throw new BusinessException(ErrorCode.ALREADY_REGISTERED_USER);
+        if(!userLecture.isEmpty()) throw new BusinessException(ErrorCode.ALREADY_REGISTERED_USER);
 
         // UserLecture 등록
         UserLecture newUserLecture = new UserLecture(userId, lectureId);

@@ -19,8 +19,11 @@ public class Lecture {
     @Column(name = "name", nullable = false)
     String name;
 
-    @Column(name = "capacity", nullable = false)
-    Long capacity;
+    @Column(name = "total_capacity", nullable = false)
+    Long totalCapacity;
+
+    @Column(name = "remain_capacity", nullable = false)
+    Long remainCapacity;
 
     @Column(name = "open_time", nullable = false)
     ZonedDateTime openTime;
@@ -35,9 +38,19 @@ public class Lecture {
 
     // capacity 수정
     public void decreaseCapacity(){
-        this.capacity = this.capacity-1;
+        this.remainCapacity = this.remainCapacity-1;
     }
     public void increaseCapacity(){
-        this.capacity = this.capacity+1;
+        this.remainCapacity = this.remainCapacity+1;
+    }
+
+    public Lecture(){
+
+    }
+    public Lecture(String name, Long totalCapacity, Long remainCapacity, ZonedDateTime openTime){
+        this.name = name;
+        this.totalCapacity = totalCapacity;
+        this.remainCapacity = remainCapacity;
+        this.openTime = openTime;
     }
 }

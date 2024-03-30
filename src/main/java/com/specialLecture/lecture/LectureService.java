@@ -8,6 +8,8 @@ import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.ZonedDateTime;
+
 @RequiredArgsConstructor
 @Service
 public class LectureService {
@@ -16,7 +18,7 @@ public class LectureService {
 
     @Transactional(rollbackFor = Exception.class)
     public UserLectureResponseDto register (Long userId, Long lectureId) {
-        String key = userId + ":" + lectureId;
+        String key = userId + ":" + lectureId + ":" + ZonedDateTime.now();
         return lockHandler.executeOnLock(key, () -> {
             // 접수 시간 및 남은 인원수 확인 + 정원 차감
             lectureManager.check(lectureId);
